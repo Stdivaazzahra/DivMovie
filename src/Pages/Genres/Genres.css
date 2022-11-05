@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.GenrePageWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.genreMovie {
+  background-color: #162447;
+  width: 85%;
+}
+
+.genreMovieTitle h1 {
+  color: white;
+  /* font-size: 3rem; */
+  font-family: "Itim", cursive;
+  padding: 1rem 0 1.5rem 0;
+  font-weight: bolder;
+  text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
+.genreMovieWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 5rem;
+
+  /* width: 10rem; */
+}
+
+.genreMovieItem {
+  margin: 0.5rem;
+  border: 3px solid #1f4068;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.genreMovieItem:hover {
+  box-shadow: 2px 3px 7px #0c7b93;
+}
+
+img.genreMovieImg {
+  margin: 0 0.5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.genreMovieTitle {
+  color: white;
+  font-size: 1rem;
+  font-family: "Itim", cursive;
+  font-weight: bolder;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+.genreWrap {
+  background-color: #27496d;
+  width: 15%;
+}
+
+.genreTitle {
+  color: white;
+  font-size: 1.8rem;
+  font-family: "Itim", cursive;
+  padding: 2rem 0;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.genreItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.genreBtn {
+  margin: 0.5rem;
+  color: white;
+  font-family: "Itim", cursive;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.genreBtn:hover {
+  /* color: #0c7b93; */
+  color: #00a8cc;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}

@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.UpComingWrap {
+  background-color: #162447;
+}
+
+.UpMovieWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.UpTitle {
+  color: white;
+  font-size: 2rem;
+  font-family: "Itim", cursive;
+  font-weight: bolder;
+  text-shadow: 5px 2px 5px #0000007a;
+  padding: 1rem 0 2rem 0;
+}
+
+.UpMovieItem {
+  margin: 0.5rem;
+  border: 3px solid #1f4068;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #27496d;
+}
+
+.UpMovieItem:hover {
+  box-shadow: 2px 3px 7px #0c7b93;
+}
+
+img.UpMovieImg {
+  margin: 0 0.5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.UpMovieTitle {
+  color: white;
+  font-size: 1rem;
+  font-family: "Itim", cursive;
+  font-weight: bolder;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}

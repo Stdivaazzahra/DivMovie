@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Averia+Libre:wght@700&display=swap");
+
+.NavbarWrap {
+  background-color: #206695;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 5rem;
+  color: white;
+  font-family: "Cabin", sans-serif;
+  font-weight: bolder;
+}
+
+.NavbarTitle {
+  font-size: 1.8rem;
+  font-family: "Rubik Iso", cursive;
+  transition: all 0.2s linear;
+}
+
+.NavbarTitle:hover {
+  /* color: #0c7b93; */
+  color: #1ea0bd;
+  text-shadow: 5px 5px 2px #000000;
+}
+
+.navbarPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20rem;
+  color: white;
+  text-shadow: 5px 2px 1px #1f4068;
+}
+
+.UpComing {
+  font-family: "Averia Libre", cursive;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s linear;
+}
+
+.UpComing:hover {
+  /* color: #0c7b93; */
+  color: #1ea0bd;
+  text-shadow: 5px 5px 2px #000000;
+}
+
+.AllMovie {
+  font-family: "Averia Libre", cursive;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s linear;
+}
+
+.AllMovie:hover {
+  /* color: #0c7b93; */
+  color: #1ea0bd;
+  text-shadow: 5px 5px 2px #000000;
+}
+
+.Tv {
+  font-family: "Averia Libre", cursive;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s linear;
+}
+
+.Tv:hover {
+  /* color: #0c7b93; */
+  color: #1ea0bd;
+  text-shadow: 5px 5px 2px #000000;
+}
+
+.NavbarBtn {
+  display: flex;
+  justify-content: space-between;
+  width: 7rem;
+}
+
+.LRBtn {
+  display: flex;
+  flex-direction: row;
+  /* cursor: pointer; */
+}
+
+button.login {
+  height: 40px;
+  color: white;
+  /* background-color: transparent; */
+  background-color: #0c7b93;
+  border-radius: 0.7rem;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 0 5px 2px #1b1b2f;
+  border: solid #0c7b93;
+  padding: 0 20px;
+  font-weight: bolder;
+  margin-right: 20px;
+  transition: all 0.2s linear;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.login:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border: solid #1b1b2f;
+  color: white;
+}
+
+button.register {
+  height: 40px;
+  color: white;
+  background-color: transparent;
+  border-radius: 0.7rem;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 0 5px 2px #1b1b2f;
+  border: solid #1b1b2f;
+  padding: 0 20px;
+  font-weight: bolder;
+  margin-right: 20px;
+  transition: all 0.2s linear;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.register:hover {
+  background-color: #0c7b93;
+  border: solid #0c7b93;
+  color: white;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+  margin: 0 1rem;
+}
+
+.name {
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 3px #162447;
+  transition: all 0.2s linear;
+}
+
+.nameLog {
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 3px #162447;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.nameLog:hover {
+  color: #1ea0bd;
+  text-shadow: 2px 3px #000000;
+}
