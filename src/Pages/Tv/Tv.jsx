@@ -26,16 +26,19 @@ const Tv = () => {
 
   return (
     <div>
-      <div className='TvShowTitle'>
+      <div className='TvShowTitle text-[#1f4068] text-[2.5rem] font-extrabold'>
                 <h1>Tv Shows</h1>
             </div>
       <div className="TvWrap">
       {lateMovies? (
         lateMovies.map((item) => {
           return (
-            <div onClick={() => getID(item.id)} key={item.id} className='TvItem'>
+            <div onClick={() => getID(item.id)} key={item.id} 
+                className='TvItem cursor-pointer rounded-2xl'>
                 <img className='TvImg' src={ApiImg + `${item.poster_path}`} alt="PosterTv" />
-                <h2 className='TvTitle'>{item.name}</h2>
+                <h2 className='TvTitle text-[1rem] text-[#162447]'>
+                  {item.name}
+                  </h2>
             </div>
           );
         })

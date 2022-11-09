@@ -3,12 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Averia+Libre:wght@700&display=swap");
 
 .NavbarWrap {
-  background-color: #206695;
+  /* background-color: #206695; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 5rem;
-  color: white;
+  /* color: #ffffff; */
   font-family: "Cabin", sans-serif;
   font-weight: bolder;
 }

@@ -80,7 +80,12 @@ const Login = ({ open, onClose }) => {
       <hr />
       <form>
         <div className="input_box">
-          <input type="email" name="email" onChange={handleDataInput} placeholder="Email Address" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,}$" required />
+          <input type="email" 
+          name="email" 
+          onChange={handleDataInput} 
+          placeholder="Email Address" 
+          pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,}$" 
+          required />
           <AiOutlineMail className="icon_form" />
         </div>
 

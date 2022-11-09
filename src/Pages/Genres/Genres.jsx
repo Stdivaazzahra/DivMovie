@@ -47,25 +47,27 @@ const Genres = () => {
     <div>
         <div className='GenrePageWrap'>
             
-            <div className='genreWrap'>
-                <div className="genreTitle">
+            <div className='genreWrap w-[15%] bg-[#27496d]'>
+                <div className="genreTitle text-white text-3xl font-bold mt-5">
                     <h2>Genres</h2>
                 </div>
                 <div className="genreItem">
                     {genre &&
                     genre.map((e) => (
-                        <button key={e.id} onClick={() => getGendres(e.name.toLowerCase())} className='genreBtn' >
+                        <button
+                             key={e.id} onClick={() => getGendres(e.name.toLowerCase())} 
+                            className='genreBtn text-white cursor-pointer' >
                             {e.name}
                         </button>
                     ))}
                 </div>
             </div>
 
-            <div className='genreMovie'>
-                <div className='genreMovieTitle'>
+            <div className='genreMovie bg-[#162447] w-[85%]'>
+                <div className='genreMovieTitle pb-2'>
                     <h1 className="text-[2em]">Showing Movies With "{genres.replace(genres.charAt(0), genres.charAt(0).toUpperCase())}" Genre</h1>
                 </div>
-                <div className='genreMovieWrap'>
+                <div className='genreMovieWrap '>
                     {seacrhGe?(
                         seacrhGe.map((item) => {
                             return (

@@ -29,18 +29,23 @@ const Seacrh = () => {
 
   return (
     <div>
-        <div className='SearchWrap'>
-            <div className='SearchMovie'>
+        <div className='SearchWrap w-full'>
+            <div className='SearchMovie w-full bg-[#162447]'>
                 <div className='SeacrhTitle'>
-                    <h1 className="text-[2em]">Search Result "{name}" </h1>
+                    <h1 className="text-[2.5rem] text-white font-extrabold">
+                        Search Result "{name}"
+                    </h1>
                 </div>
                 <div className='searchMovieWrap'>
                     {seacrh?(
                         seacrh.map((item) => {
                             return (
-                            <div onClick={() => getID(item.id)} key={item.id} className='SeacrhMovieItem'>
+                            <div onClick={() => getID(item.id)} key={item.id} 
+                                className='SeacrhMovieItem cursor-pointer rounded-2xl'>
                                 <img className='SeachMovieImg' src={ApiImg + `${item.poster_path}`} alt="SearchMovie" />
-                                <h2 className='SearchMovieTitle'>{item.title}</h2>
+                                <h2 className='SearchMovieTitle text-white text-[1rem] font-extrabold'>
+                                    {item.title}
+                                </h2>
                             </div>
                         );
                     })

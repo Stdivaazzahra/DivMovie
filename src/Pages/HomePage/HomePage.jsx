@@ -75,16 +75,24 @@ const HomePage = () => {
 
   return (
     <div>
-            <div className="homeHeader">
+            <div className="homeHeader h-[80vh]">
                 {header && 
                 header.map((e) => {
                     return ( 
                         <div  className='HeaderWrap'>
-                            <img className='HeaderImg' src={ApiImg + `${e.backdrop_path}`} alt="Background_Detail" />
-                            <div className='headerDec'>
-                                <h2 className='HeaderTitle'>{e.title}</h2>
-                                {/* <h3 className='HeaderRate'>{header?.vote_average}</h3> */}
-                                <a className='HeaderClick' href={`${e.homepage}`} target="blank">Click Here</a>
+                            <img 
+                                className='HeaderImg h-[80vh] w-full' 
+                                src={ApiImg + `${e.backdrop_path}`} 
+                                alt="Background_Detail" />
+                            <div className='headerDec z-10 w-full h-[75%]'>
+                                <h2 className='HeaderTitle text-[5rem]'>
+                                    {e.title}
+                                </h2>
+                                <a className='HeaderClick text-[1rem] w-[8%] cursor-pointer ' 
+                                    href={`${e.homepage}`} target="blank"
+                                    >
+                                    Click Here
+                                </a>
                             </div>
                         </div>
                     );
@@ -92,23 +100,24 @@ const HomePage = () => {
             </div>
 
 
-        <div className='MovieWrap'>
+        <div className='MovieWrap w-full'>
             
-            <div className='genreWrap'>
-                <div className="genreTitle">
+            <div className='genreWrap bg-[#27496d] w-[15%]'>
+                <div className="genreTitle text-white text-3xl font-bold">
                     <h2>Genres</h2>
                 </div>
                 <div className="genreItem">
                     {genre &&
                     genre.map((e) => (
-                        <button key={e.id} onClick={() => getGendres(e.name.toLowerCase())} className='genreBtn' >
+                        <button key={e.id} onClick={() => getGendres(e.name.toLowerCase())} 
+                        className='genreBtn text-white cursor-pointer'>
                             {e.name}
                         </button>
                     ))}
                 </div>
             </div>
 
-            <div className='popularMovie'>
+            <div className='popularMovie bg-[#162447] w-[85%]'>
                 
                 <div className="seacrhWrap">
                     <form 
@@ -116,7 +125,7 @@ const HomePage = () => {
                         e.preventDefault();
                         SearchMovie(seacrh);
                         }}
-                        className='searchItem' 
+                        className='searchItem p-2 w-[15rem] rounded-2xl' 
                     >
                         <input onChange={(e) => setSeacrh(e.target.value)} value={seacrh} type="text" placeholder='Search'/>
                         <button type="submit">
@@ -128,13 +137,17 @@ const HomePage = () => {
             <div className='popularTitle'>
                 <h1>Popular Movie</h1>
             </div>
-            <div className='popularWrap'>
+            <div className='popularWrap m-2'>
                 {movie &&
                 movie.map((item) => {
                     return (
-                        <div onClick={() => getID(item.id)} key={item.id} className='popularItem'>
+                        <div 
+                            className='popularItem cursor-pointer m-2 rounded-2xl p-2'
+                            onClick={() => getID(item.id)} key={item.id} >
                         <img className='popularImg' src={ApiImg + `${item.poster_path}`} alt="PosterMovie" />
-                        <h2 className='popularTitle'>{item.title}</h2>
+                        <h2 className='popularTitle text-white text-base'>
+                            {item.title}
+                        </h2>
                         </div>
                     )
                 })}

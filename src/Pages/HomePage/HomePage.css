@@ -7,47 +7,28 @@
   padding: 0;
 }
 
-.homeHeader {
-  height: 50vh;
-}
-
 img.HeaderImg {
-  height: 50vh;
-  width: 100%;
   position: absolute;
   object-fit: cover;
 }
 
 .headerDec {
   position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 50%;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
-  /* justify-content: flex-end; */
 }
 
 .HeaderTitle {
-  font-size: 5rem;
   text-shadow: 0 5px 5px black;
   font-family: "Fredoka One", cursive;
   padding-right: 5rem;
-  /* font-size: 1rem;font-family: "Itim", cursive; */
 }
 
-/* .HeaderRate {
-  font-family: "Cabin", sans-serif;
-  text-shadow: 0 2px 5px #d61515;
-  padding-right: 10rem;
-} */
-
 .HeaderClick {
-  font-size: 1rem;
   font-family: "Cabin", sans-serif;
   margin-right: 10rem;
   background-color: #0c7b93;
@@ -57,8 +38,6 @@ img.HeaderImg {
   box-shadow: 0 5px 2px #1b1b2f;
   border: solid #1b1b2f;
   transition: all 0.2s linear;
-  cursor: pointer;
-  width: 8%;
 }
 
 .HeaderClick:hover {
@@ -70,12 +49,6 @@ img.HeaderImg {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
-}
-
-.popularMovie {
-  background-color: #162447;
-  width: 85%;
 }
 
 .popularTitle h1 {
@@ -92,18 +65,11 @@ img.HeaderImg {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 5rem;
-
-  /* width: 10rem; */
 }
 
 .popularItem {
-  margin: 0.5rem;
   border: 3px solid #1f4068;
   transition: all 0.2s linear;
-  cursor: pointer;
-  border-radius: 1rem;
-  padding: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,25 +90,15 @@ img.popularImg {
 }
 
 .popularTitle {
-  color: white;
-  font-size: 1rem;
   font-family: "Itim", cursive;
   font-weight: bolder;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
-.genreWrap {
-  background-color: #27496d;
-  width: 15%;
-}
-
 .genreTitle {
-  color: white;
-  font-size: 1.8rem;
   font-family: "Itim", cursive;
   padding: 2rem 0;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
-  font-weight: bold;
 }
 
 .genreItem {
@@ -152,14 +108,11 @@ img.popularImg {
 
 .genreBtn {
   margin: 0.5rem;
-  color: white;
   font-family: "Itim", cursive;
   transition: all 0.2s linear;
-  cursor: pointer;
 }
 
 .genreBtn:hover {
-  /* color: #0c7b93; */
   color: #00a8cc;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
@@ -172,17 +125,13 @@ div.seacrhWrap {
 
 .searchItem {
   border: 2px solid #5b7aa1;
-  padding: 0.5rem;
-  border-radius: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 15rem;
 }
 
 .searchItem input {
-  /* background-color: black; */
   background-color: transparent;
   width: 15rem;
   font-family: "Itim", cursive;

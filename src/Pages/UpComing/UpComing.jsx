@@ -26,17 +26,19 @@ const UpComing = () => {
 
   return (
     <div>
-      <div className='UpComingWrap'>
-        <div className='UpTitle'>
+      <div className='UpComingWrap bg-[#162447] pb-5'>
+        <div className='UpTitle text-white text-[2.5rem] font-extrabold'>
                   <h1>UpComing Movie</h1>
               </div>
         <div className="UpMovieWrap">
         {upMovies? (
           upMovies.map((item) => {
             return (
-              <div onClick={() => getID(item.id)} key={item.id} className='UpMovieItem'>
+              <div 
+                  onClick={() => getID(item.id)} key={item.id} 
+                  className='UpMovieItem bg-[#27496d] cursor-pointer rounded-2xl'>
                   <img className='UpMovieImg' src={ApiImg + `${item.poster_path}`} alt="PosterMovie" />
-                  <h2 className='UpMovieTitle'>{item.title}</h2>
+                  <h2 className='UpMovieTitle text-white text-[1rem] font-extrabold'>{item.title}</h2>
               </div>
             );
           })

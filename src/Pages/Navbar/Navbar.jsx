@@ -1,11 +1,9 @@
-import axios from 'axios';
 import "./Navbar.css"
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { UserAuth } from '../../Components/context/AuthContext';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,22 +12,10 @@ const Navbar = () => {
   const credential = localStorage.getItem('credential');
   const navigate = useNavigate();
 
-  const {user, logOut} = UserAuth();
-  
-
- const handleSignOut = async() => {
-    try {
-        await logOut()
-        localStorage.clear();
-        navigate('/');
-    } catch (err) {
-        console.log(err)
-    }
-  }
 
   return (
     <div>
-        <div className="NavbarWrap ">
+        <div className="NavbarWrap fixed z-50 overflow-hidden w-full bg-[#206695] text-[#ffffff]">
             <Link className="NavbarTitle" to="/">
                 <h1>DivMovie</h1> 
             </Link>

@@ -8,18 +8,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-}
-
-.genreMovie {
-  background-color: #162447;
-  width: 85%;
+  padding-top: 3em;
 }
 
 .genreMovieTitle h1 {
   color: white;
-  /* font-size: 3rem; */
   font-family: "Itim", cursive;
-  padding: 1rem 0 1.5rem 0;
+  padding: 3rem 0 1.5rem 0;
   font-weight: bolder;
   text-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
@@ -30,8 +25,6 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 5rem;
-
-  /* width: 10rem; */
 }
 
 .genreMovieItem {
@@ -68,35 +61,12 @@ img.genreMovieImg {
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
-.genreWrap {
-  background-color: #27496d;
-  width: 15%;
-}
-
-.genreTitle {
-  color: white;
-  font-size: 1.8rem;
-  font-family: "Itim", cursive;
-  padding: 2rem 0;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-  font-weight: bold;
-}
-
 .genreItem {
   display: flex;
   flex-direction: column;
 }
 
-.genreBtn {
-  margin: 0.5rem;
-  color: white;
-  font-family: "Itim", cursive;
-  transition: all 0.2s linear;
-  cursor: pointer;
-}
-
 .genreBtn:hover {
-  /* color: #0c7b93; */
   color: #00a8cc;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }

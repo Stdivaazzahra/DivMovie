@@ -27,16 +27,19 @@ const AllMovie = () => {
 
   return (
     <div>
-      <div className='AllTitle'>
+      <div className='AllTitle text-[#1f4068] text-[2.5rem] font-extrabold'>
                 <h1>Discover Movie</h1>
             </div>
-      <div className="AllMovieWrap">
+      <div className="AllMovieWrap pb-5">
       {allMovies? (
         allMovies.map((item) => {
           return (
-            <div onClick={() => getID(item.id)} key={item.id} className='allMovieItem'>
+            <div onClick={() => getID(item.id)} key={item.id} 
+            className='allMovieItem cursor-pointer rounded-2xl bg-[#27496d]'>
                 <img className='AllMovieImg' src={ApiImg + `${item.poster_path}`} alt="PosterMovie" />
-                <h2 className='AllMovieTitle'>{item.title}</h2>
+                <h2 className='AllMovieTitle text-white text-[1rem] font-extrabold'>
+                  {item.title}
+                </h2>
             </div>
           );
         })

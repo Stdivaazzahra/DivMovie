@@ -8,52 +8,33 @@
   padding: 0;
 }
 
-.DetailMovie {
-  height: 100vh;
-}
-
 .DetailImg {
-  height: 100vh;
-  width: 100%;
   position: absolute;
   object-fit: cover;
 }
 
 .DetailDec {
-  margin-top: 2rem;
   position: absolute;
   margin-left: 3rem;
   z-index: 9;
-  width: 80%;
-  height: 50%;
-  color: white;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  /* align-items: flexcen-end; */
   flex-wrap: wrap;
-  /* justify-content: flex-end; */
 }
 
 .DetailTitle {
   font-size: 4rem;
   text-shadow: 0 5px 5px black;
-  /* font-family: "Permanent Marker", cursive; */
   font-family: "Acme", sans-serif;
-  /* height: 20vh; */
-  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* flex-wrap: wrap; */
-  /* padding-bottom: 1rem; */
-  /* font-size: 1rem;font-family: "Itim", cursive; */
 }
 
 .detailText {
   display: flex;
   flex-direction: column;
-  width: 70%;
 }
 
 .DetailRate {
@@ -71,7 +52,6 @@
   font-family: "Fredoka One", cursive;
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  /* margin-right: 2rem; */
 }
 
 .genre {
@@ -86,32 +66,16 @@ p.Overview {
   font-family: "Ubuntu", sans-serif;
   text-shadow: 0 3px 3px black;
   margin-bottom: 1rem;
-  /* justify-content: flex-start; */
 }
-
-/* .HeaderRate {
-    font-family: "Cabin", sans-serif;
-    text-shadow: 0 2px 5px #d61515;
-    padding-right: 10rem;
-  } */
 
 .DetailClick {
   font-size: 1rem;
   font-family: "Cabin", sans-serif;
-  /* font-family: "Fredoka One", cursive; */
-  /* margin-right: 10rem; */
-  background-color: #0c7b93;
-  padding: 0.4rem;
-  border-radius: 0.7rem;
   text-shadow: 1px 1px 1px black;
   box-shadow: 0 5px 2px #1b1b2f;
   border: solid #1b1b2f;
   transition: all 0.2s linear;
-  cursor: pointer;
-  width: 20%;
   margin-top: 1rem;
-  /* display: flex; */
-  /* flex-direction: row; */
 }
 
 .DetailClick:hover {
@@ -127,46 +91,26 @@ p.Overview {
 }
 
 .castWrap {
-  height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: flex-end; */
-  /* margin: 0 5rem; */
-  /* top: 30rem; */
-  /* position: absolute; */
 }
 
 .castItem {
   margin: 0.5rem;
-  /* border: 3px solid #1f4068; */
   transition: all 0.2s linear;
-  cursor: pointer;
-  border-radius: 1rem;
   padding: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* width: 10rem; */
-  /* position: relative; */
   z-index: 9;
-  /* height: 100vh; */
 }
 
 .castItem:hover {
   box-shadow: 2px 3px 7px #0c7b93;
 }
-
-/* img.castImg {
-  margin: 0 0.5rem;
-  width: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
-} */
 
 .castText {
   color: white;
