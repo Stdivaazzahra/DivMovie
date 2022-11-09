@@ -1,67 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 import { AiOutlineMail } from 'react-icons/ai';
 import { FiEyeOff } from 'react-icons/fi';
 import { CgCloseO } from 'react-icons/cg';
-import axios from 'axios';
+// import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import { GoogleLogin } from '@react-oauth/google';
-import jwt_decode from 'jwt-decode';
-import GoogleButton from 'react-google-button';
-import { UserAuth } from '../../Components/context/AuthContext';
-import { async } from '@firebase/util';
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase";
-// import {firebase} from '../../firebase'
+import { useDispatch } from 'react-redux';
+
+import { getLogin, getLoginGoogle } from '../../App/Counter/loginSlice';
+import { auth} from '../../firebase';
+
+import { useAuthState } from "react-firebase-hooks/auth";
+import GoogleButton from 'react-google-button'
 
 const Login = ({ open, onClose }) => {
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
-  const {googleSignIn} = UserAuth();
-  const API_ENDPOINT = `https://notflixtv.herokuapp.com/api/v1/users/login`;
   const [msg, setMsg] = useState('');
-  const [data, setData] = useState({
+
+  const dataValue = {
     email: '',
     password: '',
-  });
+  }
+  const [data, setData] = useState(dataValue);
 
   const handleDataInput = (e) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
+    const {name, value} = e.target;
+    setData({ ...data, [name]: value});
   };
 
-  
-  const handleGoogleSignIn = async() => {
+  const handleGoogle = () => {
     try {
-      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-        console.log("User", currentUser);
-        localStorage.setItem("credential", currentUser.accessToken);
-        localStorage.setItem("given_name", currentUser.displayName);
-      });
-      await googleSignIn();
-      onClose(false);
-      navigate('/')
-    } catch (err) {
-      console.log(err);
+      dispatch(getLoginGoogle())
+    }catch(error) {
+      console.error(error)
     }
-  }
-
-  const dataSend = (e) => {
-    e.preventDefault();
-    axios
-      .post(API_ENDPOINT, data)
-      .then((res) => {
-        localStorage.setItem('credential', res.data.data.token);
-        localStorage.setItem('given_name', res.data.data.first_name);
-        onClose(false);
-        navigate('/');
-      })
-      .catch((err) => setMsg('Email atau Password anda salah!'));
   };
 
- 
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    try {
+        dispatch(getLogin(data))
+        // console.log(data)
+    } catch(error) {
+        console.error(error);
+    }
+};
+  
 
   if (msg) {
     setTimeout(() => {
@@ -75,57 +63,43 @@ const Login = ({ open, onClose }) => {
       <span className={`error ${msg && 'muncul'}`}>{msg} !!</span>
       <div className="item_form">
         <h1> Log In to Your Account</h1>
-        <CgCloseO onClick={() => onClose(false)} className="icon_close" />
+        <CgCloseO onClick={() => onClose(false)} className="icon_close text-2xl cursor-pointer" />
       </div>
       <hr />
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="input_box">
-          <input type="email" 
-          name="email" 
-          onChange={handleDataInput} 
-          placeholder="Email Address" 
-          pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,}$" 
-          required />
+          <input className='h-10 w-full' 
+            name='email'
+            value={data.email}
+            type="email"
+            onChange={handleDataInput}
+            placeholder="Email Address" 
+            pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,}$" required />
           <AiOutlineMail className="icon_form" />
         </div>
 
         <div className="input_box">
-          <input type="password" placeholder="Password" onChange={handleDataInput} name="password" required />
+          <input className='h-10 w-full' 
+              name='password'
+              value={data.password}
+              type="password"
+              onChange={handleDataInput} 
+              placeholder="Password"  
+              required />
           <FiEyeOff className="icon_form" />
         </div>
 
         <div className="googleBtn">
-          <button type="submit" onClick={dataSend} className="button">
+          <button  type="submit" className="button w-full h-10 bg-[#b50e0e] text-white">
             Login
           </button>
-
+  
           <article>or</article>
 
-          {/* <GoogleOAuthProvider clientId="1054221434578-4obkp9s6tn17m7hhlg65eqm61jpv3ooe.apps.googleusercontent.com">
-            <GoogleLogin
-              onSuccess={(credentialResponse) => {
-                console.log(credentialResponse);
-                var decoded = jwt_decode(credentialResponse.credential);
-                console.log(decoded);
-                localStorage.setItem('credential', credentialResponse.credential);
-                localStorage.setItem('given_name', decoded.given_name);
-                localStorage.getItem('picture', decoded.picture);
-                onClose(false);
-                navigate('/');
-              }}
-              onError={() => {
-                setMsg('Login Failed');
-              }}
-            />
-          </GoogleOAuthProvider> */}
-
-          <div>
-            <GoogleButton 
-            onClick={handleGoogleSignIn} 
-            
-            />
-          </div>
-
+          <GoogleButton 
+            className=''
+            onClick={handleGoogle}
+          />
 
         </div>
       </form>

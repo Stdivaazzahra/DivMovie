@@ -1,63 +1,39 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { BiSearchAlt } from 'react-icons/bi';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import "./HomePage.css"
+import { getHeader, getMovies } from '../../App/Counter/movieSlice';
+import { getGenre } from '../../App/Counter/genresSlice';
+import { reset } from '../../App/Counter/auth';
 
 const HomePage = () => {
-    const ApiMovie = 'https://api.themoviedb.org/3/movie/popular?api_key=9cc1bc46ae7070abb9a43667213d613a&page=8';
-    const ApiHeader = 'https://api.themoviedb.org/3/movie/popular?api_key=9cc1bc46ae7070abb9a43667213d613a&page=2';
-    // const ApiHeader = 'https://api.themoviedb.org/3/movie/474350?api_key=9cc1bc46ae7070abb9a43667213d613a'
-    const ApiGendre = 'https://api.themoviedb.org/3/genre/movie/list?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US'
     const ApiImg ="https://image.tmdb.org/t/p/w500/"
 
-    const [header, setHeader] = useState();
-    const [movie, setMovie] = useState();
-    const [genre, setGenre] = useState();
     const [seacrh, setSeacrh] = useState();
-
+    const { header, movie } = useSelector((state) => state.movies);
+    const { genre } = useSelector((state) => state.genre);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    
-    useEffect(() => {
-        axios
-        .get(ApiHeader)
-        .then((res) => {
-            setHeader(res.data.results.slice(0, 1))
-            console.log(res);
-        })
-        .catch ((err) => console.log(err))
-    }, [ApiHeader]);
-    
-    // useEffect(() => {
-    //     axios
-    //     .get(ApiMovie)
-    //     .then((res) => {
-    //         setMovie(res.data.results.slice(0, 10))
-    //         console.log(res);
-    //     })
-    //     .catch ((err) => console.log(err))
-    // }, [ApiMovie]);
 
     useEffect(() => {
-        axios
-        .get(ApiMovie)
-        .then((res) => {
-            setMovie(res.data.results.slice(0, 10))
-            console.log(res);
-        })
-        .catch ((err) => console.log(err))
-    }, [ApiMovie]);
-    
-    useEffect(() => {
-        axios
-        .get(ApiGendre)
-        .then((res) => {
-            setGenre(res.data.genres)
-            console.log(res);
-        })
-        .catch ((err) => console.log(err))
-    }, [ApiGendre]);
+        dispatch(getMovies())
+      }, [dispatch]);
+      useEffect(() => {
+        setTimeout(() => {
+          dispatch(reset());
+        }, 5000);
+      }, [dispatch]);
+      
 
+    useEffect(() => {
+        dispatch(getHeader())
+      }, [dispatch]);
+    
+      useEffect(() => {
+        dispatch(getGenre())
+      }, [dispatch]);
+    
     const getGendres = (genres) => {
         navigate(`/Genres/${genres}`);
       };
@@ -70,33 +46,34 @@ const HomePage = () => {
     const getID = (id) => {
         navigate(`/Detail/${id}`);
     };
-    
-    // const
 
   return (
     <div>
             <div className="homeHeader h-[80vh]">
-                {header && 
-                header.map((e) => {
-                    return ( 
-                        <div  className='HeaderWrap'>
+                {header? (
+                    header.map((header) => {
+                        return ( 
+                            <div  className='HeaderWrap'>
                             <img 
                                 className='HeaderImg h-[80vh] w-full' 
-                                src={ApiImg + `${e.backdrop_path}`} 
+                                src={ApiImg + `${header.backdrop_path}`} 
                                 alt="Background_Detail" />
                             <div className='headerDec z-10 w-full h-[75%]'>
                                 <h2 className='HeaderTitle text-[5rem]'>
-                                    {e.title}
+                                    {header.title}
                                 </h2>
                                 <a className='HeaderClick text-[1rem] w-[8%] cursor-pointer ' 
-                                    href={`${e.homepage}`} target="blank"
+                                    href={`${header.homepage}`} target="blank"
                                     >
                                     Click Here
                                 </a>
                             </div>
                         </div>
                     );
-                })}
+                })
+                ) : (
+                    <h2>Loading ...</h2>
+                )}
             </div>
 
 
@@ -137,7 +114,7 @@ const HomePage = () => {
             <div className='popularTitle'>
                 <h1>Popular Movie</h1>
             </div>
-            <div className='popularWrap m-2'>
+            <div className='popularWrap'>   
                 {movie &&
                 movie.map((item) => {
                     return (

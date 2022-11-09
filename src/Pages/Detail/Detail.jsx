@@ -1,7 +1,8 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import "./Detail.css"
+import { useDispatch, useSelector } from 'react-redux';
+import { getDetail, getDetailCast } from '../../App/Counter/detailSlice';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BiStar } from 'react-icons/bi';
 // Import Swiper styles
@@ -13,34 +14,15 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 
 const Detail = () => {
-  const { id } = useParams();
-
-  const ApiDetail = `https://api.themoviedb.org/3/movie/${id}?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US`;
   const ApiImg = 'https://image.tmdb.org/t/p/w500/';
-  const ApiCast = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=9cc1bc46ae7070abb9a43667213d613a`;
-
-  const [detail, setDetail] = useState();
-  const [cast, setCast] = useState();
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { detail, cast } = useSelector((state) => state.detail)
 
   useEffect(() => {
-    axios
-    .get(ApiDetail)
-    .then((res) => {
-      setDetail(res.data)
-        console.log(res);
-    })
-    .catch ((err) => console.log(err))
-    }, [ApiDetail]);
-  
-    useEffect(() => {
-    axios
-    .get(ApiCast)
-    .then((res) => {
-      setCast(res.data.cast)
-        console.log(res);
-    })
-    .catch ((err) => console.log(err))
-    }, [ApiCast]);
+    dispatch(getDetail(id))
+    dispatch(getDetailCast(id))
+  }, [dispatch, id]);
 
   return (
     <div>

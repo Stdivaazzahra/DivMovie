@@ -12,7 +12,6 @@ const Navbar = () => {
   const credential = localStorage.getItem('credential');
   const navigate = useNavigate();
 
-
   return (
     <div>
         <div className="NavbarWrap fixed z-50 overflow-hidden w-full bg-[#206695] text-[#ffffff]">
@@ -36,13 +35,11 @@ const Navbar = () => {
                     </h2> 
                 </Link>
             </div>
-
-
             
             <div className='LRBtn'>
                 {credential ? (
                 <>
-                    <span className="name">{localStorage.getItem('given_name')}</span>
+                    <span className="name">{localStorage.getItem('name')}</span>
                     <img className="avatar" src="https://i.pinimg.com/originals/87/25/26/87252688f7652c9e5c777e0c735cf4fb.jpg" alt="avatar user" />
                     <span
                     onClick={() => {

@@ -32,13 +32,8 @@ div.item_form {
   padding-bottom: 1rem;
 }
 
-.icon_close {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 .icon_close:hover {
-  color: #0c7b93;
+  color: #b50e0e;
 }
 
 hr {
@@ -60,6 +55,7 @@ form {
 input {
   width: 100%;
   border: none;
+  color: black;
 }
 
 input:focus {
@@ -72,8 +68,6 @@ input:focus {
   display: flex;
   align-items: center;
   transition: all 0.2s linear;
-  width: 100%;
-  height: 2.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 5rem;
@@ -82,11 +76,10 @@ input:focus {
   font-family: "Cabin", sans-serif;
   font-size: 1rem;
   background-color: white;
-  /* height: 100%; */
 }
 
 .input_box:hover {
-  border: solid #0c7b93;
+  border: solid rgb(182, 24, 24);
 }
 
 .input_box .icon_form {
@@ -105,23 +98,19 @@ input:focus {
   font-family: "Cabin", sans-serif;
   font-size: 1rem;
   margin: 0.5rem 0;
-  width: 100%;
   align-self: flex-start;
-  height: 2.5rem;
   border-radius: 5rem;
   padding: 0 1rem;
-  background-color: #0c7b93;
-  color: white;
-  border: solid #0c7b93;
+  border: solid rgb(182, 24, 24);
   transition: all 0.2s linear;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: #206695;
+  background-color: transparent;
   font-weight: bolder;
-  color: white;
-  box-shadow: 2px 2px 5px #206695;
+  color: rgb(182, 24, 24);
+  box-shadow: 2px 2px 5px rgba(255, 3, 3, 0.589);
 }
 
 @keyframes appear {
@@ -153,7 +142,6 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin-bottom: 1rem;
 }
 

@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React, { useEffect } from 'react'
 import "./UpComing.css"
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUpComing } from '../../App/Counter/movieSlice';
 
 const UpComing = () => {
-    const Api_UpMovie='https://api.themoviedb.org/3/movie/upcoming?api_key=9cc1bc46ae7070abb9a43667213d613a&page=2'
     const ApiImg ="https://image.tmdb.org/t/p/w500/"
-
-    const [upMovies, setUpMovies] = useState();
+    const { upComing } = useSelector((state) => state.movies);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    useEffect (() => {
-        axios
-        .get(Api_UpMovie)
-        .then((res) => {
-            setUpMovies(res.data.results)
-            console.log(res)
-        })
-        .catch((err) => console.log(err));
-    }, [Api_UpMovie]);
+    
+    useEffect(() => {
+      dispatch(getUpComing())
+    }, [dispatch]);
 
     const getID = (id) => {
       navigate(`/Detail/${id}`);
@@ -31,8 +25,8 @@ const UpComing = () => {
                   <h1>UpComing Movie</h1>
               </div>
         <div className="UpMovieWrap">
-        {upMovies? (
-          upMovies.map((item) => {
+        {upComing? (
+          upComing.map((item) => {
             return (
               <div 
                   onClick={() => getID(item.id)} key={item.id} 

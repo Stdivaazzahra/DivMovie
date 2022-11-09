@@ -1,27 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import "./Seacrh.css"
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSearch } from '../../App/Counter/searchSlice';
 
 const Seacrh = () => {
-    const { name } = useParams();
-
-    const ApiSeacrh = 'https://api.themoviedb.org/3/search/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&query=' + name;
     const ApiImg = 'https://image.tmdb.org/t/p/w500/';
-
-    const [seacrh, setSeacrh] = useState();
+    const { name } = useParams();
+    const { search } = useSelector((state) => state.search);
     const navigate = useNavigate();
-   
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        axios
-        .get(ApiSeacrh)
-        .then((res) => {
-            setSeacrh(res.data.results)
-            console.log(res);
-        })
-        .catch ((err) => console.log(err))
-    }, [ApiSeacrh]);
+        dispatch(getSearch(name))
+      }, [dispatch, name]);
 
     const getID = (id) => {
         navigate(`/Detail/${id}`);
@@ -37,8 +30,8 @@ const Seacrh = () => {
                     </h1>
                 </div>
                 <div className='searchMovieWrap'>
-                    {seacrh?(
-                        seacrh.map((item) => {
+                    {search?(
+                        search.map((item) => {
                             return (
                             <div onClick={() => getID(item.id)} key={item.id} 
                                 className='SeacrhMovieItem cursor-pointer rounded-2xl'>

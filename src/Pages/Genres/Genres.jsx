@@ -1,38 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { getGenre, getSearchGen } from '../../App/Counter/genresSlice';
 import "./Genres.css"
 
 const Genres = () => {
+    const ApiImg = 'https://image.tmdb.org/t/p/w500/';
+    const { genre, searchGen } = useSelector((state) => state.genre);
     const { genres } = useParams();
     const navigate = useNavigate();
-
-    const ApiGendre = 'https://api.themoviedb.org/3/genre/movie/list?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US';
-    const ApiSeacrh = 'https://api.themoviedb.org/3/search/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&query=' + genres;
-    const ApiImg = 'https://image.tmdb.org/t/p/w500/';
-
-    const [genre, setGenre] = useState();
-    const [seacrhGe, setSeacrhGe] = useState();
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        axios
-        .get(ApiGendre)
-        .then((res) => {
-            setGenre(res.data.genres)
-            console.log(res);
-        })
-        .catch ((err) => console.log(err))
-    }, [ApiGendre]);
-   
-    useEffect(() => {
-        axios
-        .get(ApiSeacrh)
-        .then((res) => {
-            setSeacrhGe(res.data.results)
-            console.log(res);
-        })
-        .catch ((err) => console.log(err))
-    }, [ApiSeacrh]);
+        dispatch(getGenre())
+      }, [dispatch]);
+     
+      useEffect(() => {
+        dispatch(getSearchGen(genres))
+      }, [dispatch, genres]);
 
     const getGendres = (genres) => {
         navigate(`/Genres/${genres}`);
@@ -41,7 +26,6 @@ const Genres = () => {
     const getID = (id) => {
         navigate(`/Detail/${id}`);
     };
-
 
   return (
     <div>
@@ -68,8 +52,8 @@ const Genres = () => {
                     <h1 className="text-[2em]">Showing Movies With "{genres.replace(genres.charAt(0), genres.charAt(0).toUpperCase())}" Genre</h1>
                 </div>
                 <div className='genreMovieWrap '>
-                    {seacrhGe?(
-                        seacrhGe.map((item) => {
+                    {searchGen?(
+                        searchGen.map((item) => {
                             return (
                                 <div onClick={() => getID(item.id)} key={item.id} className='genreMovieItem'>
                             <img className='genreMovieImg' src={ApiImg + `${item.poster_path}`} alt="PosterMovie" />
