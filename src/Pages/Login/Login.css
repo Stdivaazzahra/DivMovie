@@ -33,7 +33,7 @@ div.item_form {
 }
 
 .icon_close:hover {
-  color: #b50e0e;
+  color: #0c7b93;
 }
 
 hr {
@@ -60,6 +60,7 @@ input {
 
 input:focus {
   outline: none;
+  color: black;
   /* color: white; */
   /* border: solid rgb(182, 24, 24); */
 }
@@ -79,7 +80,7 @@ input:focus {
 }
 
 .input_box:hover {
-  border: solid rgb(182, 24, 24);
+  border: solid #0c7b93;
 }
 
 .input_box .icon_form {
@@ -101,16 +102,20 @@ input:focus {
   align-self: flex-start;
   border-radius: 5rem;
   padding: 0 1rem;
-  border: solid rgb(182, 24, 24);
+  border: solid #0c7b93;
   transition: all 0.2s linear;
   cursor: pointer;
+  box-shadow: 0 5px 2px #1b1b2f;
+  /* text-shadow: 1px 1px 1px black; */
+  font-weight: bolder;
 }
 
 .button:hover {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
+  border: solid #1b1b2f;
+  color: #0c7b93;
+  /* box-shadow: 2px 2px 5px rgba(255, 3, 3, 0.589); */
   font-weight: bolder;
-  color: rgb(182, 24, 24);
-  box-shadow: 2px 2px 5px rgba(255, 3, 3, 0.589);
 }
 
 @keyframes appear {
@@ -122,7 +127,7 @@ input:focus {
   }
 }
 .error {
-  background: linear-gradient(45deg, #ccc, red);
+  background: linear-gradient(45deg, #ccc, #0c7b93);
   padding: 1rem;
   font-weight: bolder;
   color: white;
@@ -143,13 +148,6 @@ input:focus {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-}
-
-.buttonLog:hover {
-  background-color: rgb(181, 14, 14);
-  font-weight: bolder;
-  color: black;
-  box-shadow: 2px 2px 5px rgba(255, 3, 3, 0.589);
 }
 
 article {

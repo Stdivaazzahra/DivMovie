@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
 
 const Detail = () => {
@@ -73,7 +73,7 @@ const Detail = () => {
             <Swiper
             slidesPerView={6}
             spaceBetween={5.5}
-            slidesPerGroup={2}
+            slidesPerGroup={1}
             loop={true}
             effect={"coverflow"}
             grabCursor={true}
@@ -87,7 +87,11 @@ const Detail = () => {
               slideShadows: true,
             }}
             // pagination={true}
-            modules={[EffectCoverflow, Pagination]}
+            modules={[Autoplay, EffectCoverflow, Pagination]}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
             className="mySwiper"
           >
             <div className="castWrap h-screen">

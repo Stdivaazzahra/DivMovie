@@ -102,7 +102,7 @@ const HomePage = () => {
                         e.preventDefault();
                         SearchMovie(seacrh);
                         }}
-                        className='searchItem p-2 w-[15rem] rounded-2xl' 
+                        className='searchItem p-2 w-[20rem] mt-5 rounded-2xl text-white' 
                     >
                         <input onChange={(e) => setSeacrh(e.target.value)} value={seacrh} type="text" placeholder='Search'/>
                         <button type="submit">
@@ -122,7 +122,7 @@ const HomePage = () => {
                             className='popularItem cursor-pointer m-2 rounded-2xl p-2'
                             onClick={() => getID(item.id)} key={item.id} >
                         <img className='popularImg' src={ApiImg + `${item.poster_path}`} alt="PosterMovie" />
-                        <h2 className='popularTitle text-white text-base'>
+                        <h2 className='popularTitle text-white text-base w-40 py-2'>
                             {item.title}
                         </h2>
                         </div>

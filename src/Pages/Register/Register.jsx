@@ -24,81 +24,17 @@ const Register = ({ openRes, onCloseRes }) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
-  // const handleDataInput = (e) => {
-  //   setData({
-  //     ...data,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
 
   const handleRegister = async (e) => {
     e.preventDefault();
     dispatch(getUserRegist(data));
   };
-  // useEffect(() => {
-  //   if (loading) return;
-  //   if (user)
-  //   onCloseRes(false)
-  //   navigate("/");
-  // }, [user, loading, navigate, onCloseRes]);
-
-  // const API_ENDPOINT = `https://notflixtv.herokuapp.com/api/v1/users`;
 
   const [msg, setMsg] = useState('');
 
-  // const [data, setData] = useState({
-  //   first_name: '',
-  //   last_name: '',
-  //   email: '',
-  //   password: '',
-  //   password_confirmation: '',
-  // });
 
   if (!openRes) return null;
-  // const handleDataInput = (e) => {
-  //   setData({
-  //     ...data,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
 
-  // console.log(image);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(getUserRegist({
-  //     first_name: data.first_name,
-  //     last_name: data.last_name,
-  //     displayName: data.name,
-  //     image: image,
-  //     email: data.email,
-  //     password: data.password,
-  //     password_confirmation: data.password_confirmation,
-  //   })
-  //   );
-  // };
-
-  // const dataSend = (e) => {
-  //   e.preventDefault();
-  //   const user = {
-  //     first_name: data.first_name,
-  //     last_name: data.last_name,
-  //     image: image,
-  //     email: data.email,
-  //     password: data.password,
-  //     password_confirmation: data.password_confirmation,
-  //   };
-  //   axios
-  //     .post(API_ENDPOINT, user)
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  // };
-
-  // if (msg) {
-  //   setTimeout(() => {
-  //     setMsg('');
-  //   }, 10000);
-  // }
   return (
     <div className={`wrap_form_Res`}>
       <span className={`error ${msg && 'muncul'}`}>{msg} !!</span>
@@ -124,7 +60,7 @@ const Register = ({ openRes, onCloseRes }) => {
             <FiEyeOff className="icon_form" />
           </div>
 
-          <button type="submit" className="button w-full h-10 bg-[#b50e0e] text-white">
+          <button type="submit" className="button w-full h-10 bg-[#0c7b93] text-white">
             Register Now
           </button>
         </form>

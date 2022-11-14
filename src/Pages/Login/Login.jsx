@@ -60,7 +60,7 @@ const Login = ({ open, onClose }) => {
         </div>
 
         <div className="googleBtn">
-          <button type="submit" className="button w-full h-10 bg-[#b50e0e] text-white">
+          <button type="submit" className="button w-full h-10 bg-[#0c7b93] text-white">
             Login
           </button>
 

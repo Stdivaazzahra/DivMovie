@@ -139,6 +139,10 @@ div.seacrhWrap {
   color: white;
 }
 
+input {
+  color: white;
+}
+
 input:focus {
   outline: none;
   border: none;
