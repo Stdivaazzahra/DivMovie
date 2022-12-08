@@ -38,9 +38,9 @@ img.HeaderImg {
 .popularTitle h1 {
   /* color: white;
   font-size: 3rem; */
-  font-family: "Itim", cursive;
+  font-family: "Fredoka One", cursive;
   /* padding: 1rem 0 1.5rem 0; */
-  font-weight: bolder;
+  /* font-weight: bolder; */
   text-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 
@@ -60,7 +60,7 @@ img.HeaderImg {
 }
 
 .genreTitle h2 {
-  font-family: "Itim", cursive;
+  font-family: "Fredoka One", cursive;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 

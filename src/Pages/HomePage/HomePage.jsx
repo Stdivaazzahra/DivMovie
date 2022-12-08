@@ -80,7 +80,7 @@ const HomePage = () => {
         <div className='MovieWrap w-full flex flex-row flex-wrap'>
             
             <div className='genreWrap bg-[#27496d] w-[25%] md:w-[15%]'>
-                <div className="genreTitle text-white text-[1.2rem] md:text-3xl font-bold">
+                <div className="genreTitle text-white text-[1.2rem] md:text-3xl">
                     <h2 className='py-[1.2rem] md:py-[2rem]'>
                         Genres
                     </h2>
