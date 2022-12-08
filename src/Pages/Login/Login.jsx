@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { AiOutlineMail } from 'react-icons/ai';
-import { FiEyeOff } from 'react-icons/fi';
+import { FiEyeOff, FiEye } from 'react-icons/fi';
 import { CgCloseO } from 'react-icons/cg';
 // import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { getLogin, getLoginGoogle } from '../../App/Counter/loginSlice';
 
 import GoogleButton from 'react-google-button';
+import { Link } from 'react-router-dom';
 
 const Login = ({ open, onClose }) => {
+  const [showIcon, setShowIcon] = useState(false)
   const dispatch = useDispatch();
   const dataValue = {
     email: '',
@@ -40,6 +42,10 @@ const Login = ({ open, onClose }) => {
     }
   };
 
+  const handleShowIcon = () => {
+    setShowIcon(!showIcon)
+  }
+
   if (!open) return null;
   return (
     <div className="wrap_form">
@@ -55,19 +61,35 @@ const Login = ({ open, onClose }) => {
         </div>
 
         <div className="input_box">
-          <input className="h-10 w-full" name="password" value={data.password} type="password" onChange={handleDataInput} placeholder="Password" required />
-          <FiEyeOff className="icon_form" />
+          <input className="h-10 w-full" name="password" value={data.password} type={(showIcon === false) ? 'password':'text'}  onChange={handleDataInput} placeholder="Password" required />
+          {
+            (showIcon === false) ?
+              <FiEyeOff 
+                className="icon_form"
+                onClick={handleShowIcon} /> :
+              <FiEye 
+                className="icon_form"
+                onClick={handleShowIcon} />
+          }
         </div>
 
         <div className="googleBtn">
-          <button type="submit" className="button w-full h-10 bg-[#0c7b93] text-white">
+
+          <button type="submit" className="button w-1/2 h-10 bg-[#0c7b93] text-white mb-[1.5rem]">
             Login
           </button>
+          
+          <Link 
+            to="/Regist"
+            className="buttonCr w-2/5 h-8 text-[#0c7b93] mb-[1.5rem] font-extrabold"
+            onClick={() => onClose(false)}
+            // to="/Register"
+            >
+            Create Account
+          </Link>
 
-          <article>or</article>
-
-          <GoogleButton className="" onClick={handleGoogle} />
         </div>
+          <GoogleButton onClick={handleGoogle} />
       </form>
     </div>
   );

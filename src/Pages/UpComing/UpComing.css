@@ -3,42 +3,18 @@
   padding: 0;
 }
 
-.UpMovieWrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 2rem;
-}
-
 .UpTitle {
   font-family: "Itim", cursive;
   text-shadow: 5px 2px 5px #1f4068;
-  padding: 5rem 0 2rem 0;
 }
 
 .UpMovieItem {
-  margin: 0.5rem;
   border: 3px solid #1f4068;
   transition: all 0.2s linear;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .UpMovieItem:hover {
   box-shadow: 2px 3px 7px #0c7b93;
-}
-
-img.UpMovieImg {
-  margin: 0 0.5rem;
-  width: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
 }
 
 .UpMovieTitle {

@@ -22,17 +22,21 @@ const AllMovie = () => {
 
   return (
     <div>
-      <div className='AllTitle text-[#1f4068] text-[2.5rem] font-extrabold'>
-                <h1>Discover Movie</h1>
+      <div className='AllTitle pt-[4rem] md:pt-[5rem] pb-[1rem] md:pb-[2rem]'>
+                <h1 className='text-[2.2rem] md:text-[2.5rem] text-[#1f4068] font-extrabold'>
+                  Discover Movie
+                </h1>
             </div>
-      <div className="AllMovieWrap pb-5">
+      <div className="AllMovieWrap pb-5 grid grid-cols-3 md:flex flex-row flex-wrap justify-center mx-[1rem] md:mx-[2rem]">
       {discover? (
         discover.map((item) => {
           return (
             <div onClick={() => getID(item.id)} key={item.id} 
-            className='allMovieItem cursor-pointer rounded-2xl bg-[#27496d]'>
-                <img className='AllMovieImg' src={ApiImg + `${item.poster_path}`} alt="PosterMovie" />
-                <h2 className='AllMovieTitle text-white text-[1rem] font-extrabold'>
+            className='allMovieItem flex justify-center items-center flex-col cursor-pointer rounded-2xl bg-[#27496d] m-[0.5rem] p-[0.5rem]'>
+                <img className='AllMovieImg mx-[0.5rem] w-[10rem] flex items-center rounded-xl' 
+                  src={ApiImg + `${item.poster_path}`} 
+                  alt="PosterMovie" />
+                <h2 className='AllMovieTitle hidden md:block text-white text-base w-40 py-2 truncate text-[1rem]'>
                   {item.title}
                 </h2>
             </div>

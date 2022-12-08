@@ -22,21 +22,23 @@ const Seacrh = () => {
 
   return (
     <div>
-        <div className='SearchWrap w-full'>
+        <div className='SearchWrap w-full flex flex-row flex-wrap'>
             <div className='SearchMovie w-full bg-[#162447]'>
                 <div className='SeacrhTitle'>
-                    <h1 className="text-[2.5rem] text-white font-extrabold">
+                    <h1 className="text-[2.2rem] md:text-[2.5rem] text-white font-extrabold">
                         Search Result "{name}"
                     </h1>
                 </div>
-                <div className='searchMovieWrap'>
+                <div className='searchMovieWrap grid grid-cols-3 md:flex flex-row flex-wrap justify-center mx-[1rem] md:mx-[2rem]'>
                     {search?(
                         search.map((item) => {
                             return (
                             <div onClick={() => getID(item.id)} key={item.id} 
-                                className='SeacrhMovieItem cursor-pointer rounded-2xl'>
-                                <img className='SeachMovieImg' src={ApiImg + `${item.poster_path}`} alt="SearchMovie" />
-                                <h2 className='SearchMovieTitle text-white text-[1rem] font-extrabold'>
+                                className='SeacrhMovieItem flex justify-center items-center flex-col m-[0.5rem] p-[0.5rem] cursor-pointer rounded-2xl'>
+                                <img className='SeachMovieImg mx-[0.5rem] w-[10rem] flex justify-center items-center rounded-xl' 
+                                    src={ApiImg + `${item.poster_path}`} 
+                                    alt="SearchMovie" />
+                                <h2 className='SearchMovieTitle hidden md:block text-white text-[1rem] font-extrabold w-40 truncate'>
                                     {item.title}
                                 </h2>
                             </div>

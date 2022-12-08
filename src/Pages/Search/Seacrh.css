@@ -3,50 +3,19 @@
   padding: 0;
 }
 
-.SearchWrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .SeacrhTitle h1 {
   font-family: "Itim", cursive;
   padding: 5rem 0 1.5rem 0;
   text-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 
-.searchMovieWrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 5rem;
-
-  /* width: 10rem; */
-}
-
 .SeacrhMovieItem {
-  margin: 0.5rem;
   border: 3px solid #1f4068;
   transition: all 0.2s linear;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .SeacrhMovieItem:hover {
   box-shadow: 2px 3px 7px #0c7b93;
-}
-
-img.SeachMovieImg {
-  margin: 0 0.5rem;
-  width: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
 }
 
 .SearchMovieTitle {

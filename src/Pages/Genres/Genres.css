@@ -12,19 +12,11 @@
 }
 
 .genreMovieTitle h1 {
-  color: white;
+  /* color: white; */
   font-family: "Itim", cursive;
-  padding: 3rem 0 1.5rem 0;
+  /* padding: 3rem 0 1.5rem 0; */
   font-weight: bolder;
   text-shadow: 5px 5px 5px rgb(0, 0, 0);
-}
-
-.genreMovieWrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 5rem;
 }
 
 .genreMovieItem {
@@ -46,7 +38,7 @@
 
 img.genreMovieImg {
   margin: 0 0.5rem;
-  width: 10rem;
+  /* width: 10rem; */
   display: flex;
   justify-content: center;
   align-items: center;

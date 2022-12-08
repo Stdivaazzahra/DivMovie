@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   height: 2rem;
-  background-color: #4093dc;
+  background-color: #124290;
 }
 
 .footer_item {
@@ -18,7 +18,7 @@
 .footer_item h1 {
   margin-top: 0.3rem;
   font-family: "Akaya Telivigala", cursive;
-  color: #363062;
+  color: whitesmoke;
   font-size: 1.1rem;
   padding: 0 0.3rem;
 }

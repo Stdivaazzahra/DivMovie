@@ -8,104 +8,34 @@
   padding: 0;
 }
 
-.DetailImg {
-  position: absolute;
-  object-fit: cover;
-}
-
-.DetailDec {
-  position: absolute;
-  margin-left: 3rem;
-  z-index: 9;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-
 .DetailTitle {
-  font-size: 4rem;
-  text-shadow: 0 5px 5px black;
   font-family: "Acme", sans-serif;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.detailText {
-  display: flex;
-  flex-direction: column;
 }
 
 .DetailRate {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   font-family: "Fredoka One", cursive;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 3px 3px black;
-  font-size: 1.3rem;
 }
 .DetailGenre {
-  display: flex;
-  flex-direction: row;
   font-family: "Fredoka One", cursive;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.genre {
-  margin-right: 2rem;
-  display: flex;
-  text-shadow: 0 3px 3px black;
 }
 
 p.Overview {
-  font-size: 1rem;
-  text-align: justify;
   font-family: "Ubuntu", sans-serif;
-  text-shadow: 0 3px 3px black;
-  margin-bottom: 1rem;
 }
 
 .DetailClick {
-  font-size: 1rem;
   font-family: "Cabin", sans-serif;
-  text-shadow: 1px 1px 1px black;
   box-shadow: 0 5px 2px #1b1b2f;
   border: solid #1b1b2f;
   transition: all 0.2s linear;
-  margin-top: 1rem;
 }
 
 .DetailClick:hover {
-  background-color: rgba(255, 255, 255, 0);
   border: solid #1b1b2f;
 }
 
-.cast {
-  display: flex;
-  align-items: flex-end;
-  height: 100vh;
-  top: 30rem;
-}
-
-.castWrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .castItem {
-  margin: 0.5rem;
   transition: all 0.2s linear;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9;
 }
 
 .castItem:hover {
@@ -113,10 +43,7 @@ p.Overview {
 }
 
 .castText {
-  color: white;
-  font-size: 1rem;
   font-family: "Itim", cursive;
-  font-weight: bolder;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 

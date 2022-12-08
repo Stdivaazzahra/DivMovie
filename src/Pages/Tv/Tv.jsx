@@ -20,17 +20,21 @@ const Tv = () => {
 
   return (
     <div>
-      <div className='TvShowTitle text-[#1f4068] text-[2.5rem] font-extrabold'>
-                <h1>Tv Shows</h1>
-            </div>
-      <div className="TvWrap">
+      <div className='TvShowTitle pt-[4rem] md:pt-[5rem] pb-[1rem] md:pb-[2rem]'>
+          <h1 className='text-[#1f4068] text-[2.2rem] md:text-[2.5rem] font-extrabold'>
+            Tv Shows
+          </h1>
+        </div>
+      <div className="TvWrap pb-5 grid grid-cols-3 md:flex flex-row flex-wrap justify-center mx-[1rem] md:mx-[2rem]">
       {tv? (
         tv.map((item) => {
           return (
             <div onClick={() => getID(item.id)} key={item.id} 
-                className='TvItem cursor-pointer rounded-2xl'>
-                <img className='TvImg' src={ApiImg + `${item.poster_path}`} alt="PosterTv" />
-                <h2 className='TvTitle text-[1rem] text-[#162447]'>
+                className='TvItem flex justify-center items-center flex-col cursor-pointer rounded-2xl m-[0.5rem] p-[0.5rem]'>
+                <img className='TvImg mx-[0.5rem] w-[10rem] flex items-center rounded-xl' 
+                  src={ApiImg + `${item.poster_path}`} 
+                  alt="PosterTv" />
+                <h2 className='TvTitle hidden md:block text-[#162447] text-base w-40 py-2 truncate text-[1rem]'>
                   {item.name}
                   </h2>
             </div>

@@ -7,11 +7,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.5rem 5rem;
+  /* padding: 0.5rem 5rem; */
+  width: 100%;
   /* color: #ffffff; */
   font-family: "Cabin", sans-serif;
   font-weight: bolder;
 }
+/* nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
 
 .NavbarTitle {
   font-size: 1.8rem;
@@ -25,12 +31,18 @@
   text-shadow: 5px 5px 2px #000000;
 }
 
-.navbarPage {
+div nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.navbarPage {
+  display: flex;
+  justify-content: space-between;
   width: 20rem;
   color: white;
+  z-index: 99999;
   text-shadow: 5px 2px 1px #1f4068;
 }
 
@@ -79,12 +91,6 @@
   width: 7rem;
 }
 
-.LRBtn {
-  display: flex;
-  flex-direction: row;
-  /* cursor: pointer; */
-}
-
 button.login {
   height: 40px;
   color: white;
@@ -94,14 +100,15 @@ button.login {
   text-shadow: 1px 1px 1px black;
   box-shadow: 0 5px 2px #1b1b2f;
   border: solid #0c7b93;
-  padding: 0 20px;
+  padding: 0 10px;
   font-weight: bolder;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   transition: all 0.2s linear;
-  display: flex;
   cursor: pointer;
   align-items: center;
+  flex-direction: row-reverse;
 }
+
 .login:hover {
   background-color: rgba(255, 255, 255, 0);
   border: solid #1b1b2f;
@@ -123,6 +130,7 @@ button.register {
   display: flex;
   cursor: pointer;
   align-items: center;
+  flex-direction: row-reverse;
 }
 .register:hover {
   background-color: #0c7b93;
@@ -163,4 +171,23 @@ button.register {
 .nameLog:hover {
   color: #1ea0bd;
   text-shadow: 2px 3px #000000;
+}
+
+div .mobileBtn {
+  background: transparent;
+  border: none;
+  outline: none;
+  /* visibility: hidden;
+  opacity: 0; */
+}
+
+@media only screen and (max-width: 1024px) {
+  div .mobileBtn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  div .responsive_nav {
+    transform: none;
+  }
 }
