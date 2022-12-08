@@ -49,20 +49,20 @@ const HomePage = () => {
 
   return (
     <div>
-            <div className="homeHeader h-[80vh]">
+            <div className="homeHeader h-[30vh] md:h-[80vh] mt-[13%] md:mt-[2%]">
                 {header? (
                     header.map((header) => {
                         return ( 
                             <div  className='HeaderWrap'>
                             <img 
-                                className='HeaderImg h-[80vh] w-full' 
+                                className='HeaderImg h-[30vh] md:h-[80vh] w-full absolute object-cover' 
                                 src={ApiImg + `${header.backdrop_path}`} 
                                 alt="Background_Detail" />
                             <div className='headerDec z-10 hidden md:flex flex-col justify-center items-end flex-wrap w-full h-[75%] text-white absolute'>
-                                <h2 className='HeaderTitle text-[5rem] pr-[5rem]'>
+                                <h2 className='HeaderTitle text-[5rem] pr-[5rem] fontCabin shadowHeader font-extrabold'>
                                     {header.title}
                                 </h2>
-                                <a className='HeaderClick text-[1rem] w-[8%] cursor-pointer ' 
+                                <a className='HeaderClick mr-[10rem] p-[0.4rem] shadowButton text-white text-[1rem] w-[30%] md:w-[10%]  cursor-pointer rounded-xl fontCabin font-semibold trnsitionAll borderButton shadowNavbar hover:borderItems bg-[#5e39f0] hover:bg-transparent' 
                                     href={`${header.homepage}`} target="blank"
                                     >
                                     Click Here
@@ -79,9 +79,9 @@ const HomePage = () => {
 
         <div className='MovieWrap w-full flex flex-row flex-wrap'>
             
-            <div className='genreWrap bg-[#27496d] w-[25%] md:w-[15%]'>
-                <div className="genreTitle text-white text-[1.2rem] md:text-3xl">
-                    <h2 className='py-[1.2rem] md:py-[2rem]'>
+            <div className='genreWrap bg-[#081548] w-[25%] md:w-[15%]'>
+                <div className="genreTitle">
+                    <h2 className='py-[1.2rem] md:py-[2rem] text-white text-[1.2rem] md:text-[2rem] shadowH1 font-extrabold fontCabin'>
                         Genres
                     </h2>
                 </div>
@@ -89,14 +89,14 @@ const HomePage = () => {
                     {genre &&
                     genre.map((e) => (
                         <button key={e.id} onClick={() => getGendres(e.name.toLowerCase())} 
-                        className='genreBtn text-white hover:text-[#00a8cc] cursor-pointer m-[0.5rem] text-[0.9rem] md:text-[1rem]'>
+                        className='genreBtn text-white hover:text-[#22cbc0] hover:shadowH2 cursor-pointer m-[0.5rem] text-[0.9rem] md:text-[1rem] font-semibold fontCabin trnsitionAll'>
                             {e.name}
                         </button>
                     ))}
                 </div>
             </div>
 
-            <div className='popularMovie bg-[#162447] w-[75%] md:w-[85%]'>
+            <div className='popularMovie bg-[#0d1d5f] w-[75%] md:w-[85%]'>
                 
                 <div className="seacrhWrap w-full flex justify-center md:justify-end pr-0 md:pr-[5rem]">
                     <form 
@@ -104,21 +104,22 @@ const HomePage = () => {
                         e.preventDefault();
                         SearchMovie(seacrh);
                         }}
-                        className='searchItem p-2 w-[15rem] md:w-[20rem] mt-5 rounded-xl flex flex-row items-center justify-center text-white' 
+                        className='searchItem p-2 w-[15rem] md:w-[20rem] mt-5 rounded-xl flex flex-row items-center justify-center text-white hover:shadowCard trnsitionAll borderItems' 
                     >
                         <input 
+                            className='fontCabin bg-transparent'
                             onChange={(e) => setSeacrh(e.target.value)} 
                             value={seacrh} 
                             type="seacrh" 
                             placeholder='Search'/>
                         <button type="submit">
-                            <BiSearchAlt className='SearchBtn'/>
+                            <BiSearchAlt className='SearchBtn text-[#22cbc0] text-[1.2rem]'/>
                         </button>
                     </form>
                 </div>
 
             <div className='popularTitle'>
-                <h1 className='text-white text-[2rem] md:text-[3rem] py-[0.7rem] md:py[1.5rem]'>
+                <h1 className='text-white text-[2rem] md:text-[2.5rem] py-[0.7rem] md:py[1.5rem] font-extrabold fontCabin shadowH1'>
                     Popular Movie
                 </h1>
             </div>
@@ -127,12 +128,12 @@ const HomePage = () => {
                 movie.map((item) => {
                     return (
                         <div 
-                            className='popularItem flex justify-center items-center flex-col cursor-pointer m-2 rounded-2xl p-2'
+                            className='popularItem flex justify-center items-center flex-col cursor-pointer m-2 rounded-2xl p-2 trnsitionAll hover:shadowCard borderItems'
                             onClick={() => getID(item.id)} key={item.id} >
-                            <img className='popularImg w-40 mx-[0.5rem] flex justify-center items-center rounded-xl' 
+                            <img className='popularImg md:h-[15rem] w-[10rem] mx-[0.5rem] flex justify-center items-center rounded-xl' 
                                 src={ApiImg + `${item.poster_path}`} 
                                 alt="PosterMovie" />
-                            <h2 className='popularTitle hidden md:block text-white text-base w-40 py-2 truncate text-[1rem]'>
+                            <h2 className='popularTitle hidden md:block text-white text-base w-40 py-2 truncate text-[1rem] font-semibold fontCabin shadowH2'>
                                 {item.title}
                             </h2>
                         </div>

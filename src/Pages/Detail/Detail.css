@@ -1,50 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
-
 * {
   margin: 0;
   padding: 0;
-}
-
-.DetailTitle {
-  font-family: "Acme", sans-serif;
-}
-
-.DetailRate {
-  font-family: "Fredoka One", cursive;
-}
-.DetailGenre {
-  font-family: "Fredoka One", cursive;
-}
-
-p.Overview {
-  font-family: "Ubuntu", sans-serif;
-}
-
-.DetailClick {
-  font-family: "Cabin", sans-serif;
-  box-shadow: 0 5px 2px #1b1b2f;
-  border: solid #1b1b2f;
-  transition: all 0.2s linear;
-}
-
-.DetailClick:hover {
-  border: solid #1b1b2f;
-}
-
-.castItem {
-  transition: all 0.2s linear;
-}
-
-.castItem:hover {
-  box-shadow: 2px 3px 7px #0c7b93;
-}
-
-.castText {
-  font-family: "Itim", cursive;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .swiper {

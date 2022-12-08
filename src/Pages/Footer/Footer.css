@@ -1,29 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
 
-.footer_wrap {
-  margin: 0;
-  padding: 0;
-  height: 2rem;
-  background-color: #124290;
-}
-
-.footer_item {
-  /* margin-top: 2rem; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .footer_item h1 {
-  margin-top: 0.3rem;
   font-family: "Akaya Telivigala", cursive;
-  color: whitesmoke;
-  font-size: 1.1rem;
-  padding: 0 0.3rem;
 }
 
 .footer_icon {
-  position: relative;
+  /* position: relative; */
   /* top: 1rem; */
 }

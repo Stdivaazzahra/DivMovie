@@ -33,7 +33,7 @@ div.item_form {
 }
 
 .icon_close:hover {
-  color: #0c7b93;
+  color: #22cbc0;
 }
 
 hr {
@@ -80,7 +80,7 @@ input:focus {
 }
 
 .input_box:hover {
-  border: solid #0c7b93;
+  border: solid #22cbc0;
 }
 
 .input_box .icon_form {
@@ -113,7 +113,7 @@ button.button {
 .button:hover {
   background-color: rgba(255, 255, 255, 0);
   border: solid #1b1b2f;
-  color: #0c7b93;
+  color: #22cbc0;
   /* box-shadow: 2px 2px 5px rgba(255, 3, 3, 0.589); */
   font-weight: bolder;
 }

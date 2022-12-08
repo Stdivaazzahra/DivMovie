@@ -12,6 +12,7 @@
   /* color: #ffffff; */
   font-family: "Cabin", sans-serif;
   font-weight: bolder;
+  box-shadow: 1px 1px 3px #5e39f0;
 }
 /* nav {
   display: flex;
@@ -95,11 +96,11 @@ button.login {
   height: 40px;
   color: white;
   /* background-color: transparent; */
-  background-color: #0c7b93;
+  background-color: #22cbc0;
   border-radius: 0.7rem;
   text-shadow: 1px 1px 1px black;
   box-shadow: 0 5px 2px #1b1b2f;
-  border: solid #0c7b93;
+  border: solid #22cbc0;
   padding: 0 10px;
   font-weight: bolder;
   /* margin-right: 20px; */

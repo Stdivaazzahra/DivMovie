@@ -2,23 +2,3 @@
   margin: 0;
   padding: 0;
 }
-
-.AllTitle {
-  font-family: "Itim", cursive;
-  text-shadow: 5px 2px 5px #0000007a;
-  /* padding: 5rem 0 2rem 0; */
-}
-
-.allMovieItem {
-  border: 3px solid #1f4068;
-  transition: all 0.2s linear;
-}
-
-.allMovieItem:hover {
-  box-shadow: 2px 3px 7px #0c7b93;
-}
-
-.AllMovieTitle {
-  font-family: "Itim", cursive;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-}

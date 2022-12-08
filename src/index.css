@@ -3,24 +3,72 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 @layer utilities {
   .fontCabin {
     font-family: "Cabin", sans-serif;
   }
+  .fontRoboto {
+    font-family: "Roboto", sans-serif;
+  }
+  .fontMonserrat {
+    font-family: "Montserrat", sans-serif;
+  }
   .shadowText1 {
     text-shadow: 5px 2px 1px #e5efff;
   }
-  .shadowText2 {
+  .shadow1 {
+    text-shadow: 5px 2px 5px #0000007a;
+  }
+  .shadowTV {
+    text-shadow: 3px 1px 4px #22cbc0;
+  }
+  .shadowUp {
+    text-shadow: 3px 2px 4px #5e39f0;
+  }
+
+  .shadowDetail {
     text-shadow: 0 3px 3px black;
   }
-  .shadowText3 {
+  /* .shadowText3 {
+    text-shadow: 0 5px 5px black;
+  } */
+  .shadowHeader {
     text-shadow: 0 5px 5px black;
   }
-  .shadowText4 {
+  .shadowH1 {
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+  }
+  .shadowH2 {
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  }
+  .shadowButton {
     text-shadow: 1px 1px 1px black;
   }
-  .transitionAll {
+  .shadowCard {
+    box-shadow: 2px 2px 9px #22cbc0;
+  }
+  .shadowCard2 {
+    box-shadow: 2px 2px 9px #5e39f0;
+  }
+  .shadowNavbar {
+    box-shadow: 1px 1px 3px #5e39f0;
+  }
+  .trnsitionAll {
     transition: all 0.2s linear;
+  }
+  .borderItems {
+    border: 1.5px solid #22cbc0;
+  }
+  .borderItems2 {
+    border: 1.5px solid #5e39f0;
+  }
+  .borderItems3 {
+    border: 3px solid #0d1d5f;
+  }
+  .borderButton {
+    border: 1.5px solid #5e39f0;
   }
 }

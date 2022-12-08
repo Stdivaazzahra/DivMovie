@@ -2,13 +2,10 @@ import "./Navbar.css"
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Login from '../Login/Login';
-import Register from '../Register/Register';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BiLogIn, BiLogOut } from 'react-icons/bi';
-import { RiUserFollowLine } from 'react-icons/ri';
 import { BsMenuButtonWideFill } from 'react-icons/bs';
 import { RiCloseCircleLine } from 'react-icons/ri';
-import { useRef } from "react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +13,6 @@ const Navbar = () => {
     const credential = localStorage.getItem('credential');
     const navigate = useNavigate();
     const [menuClicked, setMenuClicked] = useState(false)
-    const navRef = useRef();
 
     const showNavbar = () => {
         setMenuClicked(!menuClicked)
@@ -24,11 +20,11 @@ const Navbar = () => {
 
   return (
     <nav className="w-full">
-        <div className="NavbarWrap z-[99999] fixed px-4 top-0 py-2 md:px-[80px] w-full bg-[#103a7d] text-[#ffffff]">
+        <div className="NavbarWrap z-[99999] fixed px-4 top-0 py-2 md:px-[80px] w-full bg-[#0d1d5f] text-[#ffffff]">
             <Link className="NavbarTitle " to="/">
                 <h1>DivMovie</h1> 
             </Link>
-            <div className={`navbarPage tansition-all duration-1000 ease-out z-10 p-2 md:p-0 flex flex-col bg-[#103a7d] md:flex-row absolute bottom-[-351%] ${menuClicked ? "right-0":"right-[-100vw]"} md:static`}>
+            <div className={`navbarPage tansition-all duration-1000 ease-out z-10 p-2 md:p-0 flex flex-col bg-[#0d1d5f] md:flex-row absolute bottom-[-351%] ${menuClicked ? "right-0":"right-[-100vw]"} md:static`}>
                 <Link className='AllMovie' to="/AllMovies">
                     <h2>
                     Discover

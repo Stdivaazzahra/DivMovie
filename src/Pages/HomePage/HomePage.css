@@ -7,84 +7,6 @@
   padding: 0;
 }
 
-img.HeaderImg {
-  position: absolute;
-  object-fit: cover;
-}
-
-.HeaderTitle {
-  text-shadow: 0 5px 5px black;
-  font-family: "Fredoka One", cursive;
-  /* padding-right: 5rem; */
-}
-
-.HeaderClick {
-  font-family: "Cabin", sans-serif;
-  margin-right: 10rem;
-  background-color: #0c7b93;
-  padding: 0.4rem;
-  border-radius: 0.7rem;
-  text-shadow: 1px 1px 1px black;
-  box-shadow: 0 5px 2px #1b1b2f;
-  border: solid #1b1b2f;
-  transition: all 0.2s linear;
-}
-
-.HeaderClick:hover {
-  background-color: rgba(255, 255, 255, 0);
-  border: solid #1b1b2f;
-}
-
-.popularTitle h1 {
-  /* color: white;
-  font-size: 3rem; */
-  font-family: "Fredoka One", cursive;
-  /* padding: 1rem 0 1.5rem 0; */
-  /* font-weight: bolder; */
-  text-shadow: 5px 5px 5px rgb(0, 0, 0);
-}
-
-.popularItem {
-  border: 3px solid #1f4068;
-  transition: all 0.2s linear;
-}
-
-.popularItem:hover {
-  box-shadow: 2px 3px 7px #0c7b93;
-}
-
-.popularTitle {
-  font-family: "Itim", cursive;
-  font-weight: bolder;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-}
-
-.genreTitle h2 {
-  font-family: "Fredoka One", cursive;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-}
-
-.genreBtn {
-  /* margin: 0.5rem; */
-  font-family: "Itim", cursive;
-  transition: all 0.2s linear;
-}
-
-.genreBtn:hover {
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-}
-
-.searchItem {
-  border: 2px solid #5b7aa1;
-}
-
-.searchItem input {
-  background-color: transparent;
-  /* width: 15rem; */
-  font-family: "Itim", cursive;
-  color: white;
-}
-
 input[type="seacrh"] {
   color: white !important;
 }
@@ -93,13 +15,4 @@ input[type="seacrh"]:focus {
   outline: none;
   border: none;
   color: white !important;
-}
-
-.searchItem:hover {
-  box-shadow: 2px 3px 7px #0c7b93;
-}
-
-.SearchBtn {
-  color: white;
-  font-size: 1.2rem;
 }

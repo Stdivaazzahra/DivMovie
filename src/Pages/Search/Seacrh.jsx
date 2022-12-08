@@ -23,9 +23,9 @@ const Seacrh = () => {
   return (
     <div>
         <div className='SearchWrap w-full flex flex-row flex-wrap'>
-            <div className='SearchMovie w-full bg-[#162447]'>
+            <div className='SearchMovie w-full bg-[#0d1d5f] pt-[20%] md:pt-[5%]'>
                 <div className='SeacrhTitle'>
-                    <h1 className="text-[2.2rem] md:text-[2.5rem] text-white font-extrabold">
+                    <h1 className="text-[2.2rem] md:text-[2.5rem] pb-[1.5rem] text-white font-extrabold fontCabin shadowH1">
                         Search Result "{name}"
                     </h1>
                 </div>
@@ -34,11 +34,11 @@ const Seacrh = () => {
                         search.map((item) => {
                             return (
                             <div onClick={() => getID(item.id)} key={item.id} 
-                                className='SeacrhMovieItem flex justify-center items-center flex-col m-[0.5rem] p-[0.5rem] cursor-pointer rounded-2xl'>
-                                <img className='SeachMovieImg mx-[0.5rem] w-[10rem] flex justify-center items-center rounded-xl' 
+                                className='SeacrhMovieItem flex justify-center items-center flex-col m-[0.5rem] p-[0.5rem] cursor-pointer rounded-2xl trnsitionAll hover:shadowCard borderItems'>
+                                <img className='SeachMovieImg md:h-[15rem] mx-[0.5rem] w-[10rem] flex justify-center items-center rounded-xl' 
                                     src={ApiImg + `${item.poster_path}`} 
                                     alt="SearchMovie" />
-                                <h2 className='SearchMovieTitle hidden md:block text-white text-[1rem] font-extrabold w-40 truncate'>
+                                <h2 className='SearchMovieTitle hidden md:block text-white text-base w-40 py-2 truncate text-[1rem] font-semibold fontCabin shadowH2'>
                                     {item.title}
                                 </h2>
                             </div>

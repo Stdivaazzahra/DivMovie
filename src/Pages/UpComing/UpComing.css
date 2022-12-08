@@ -2,22 +2,3 @@
   margin: 0;
   padding: 0;
 }
-
-.UpTitle {
-  font-family: "Itim", cursive;
-  text-shadow: 5px 2px 5px #1f4068;
-}
-
-.UpMovieItem {
-  border: 3px solid #1f4068;
-  transition: all 0.2s linear;
-}
-
-.UpMovieItem:hover {
-  box-shadow: 2px 3px 7px #0c7b93;
-}
-
-.UpMovieTitle {
-  font-family: "Itim", cursive;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-}

@@ -75,13 +75,13 @@ const Login = ({ open, onClose }) => {
 
         <div className="googleBtn">
 
-          <button type="submit" className="button w-1/2 h-10 bg-[#0c7b93] text-white mb-[1.5rem]">
+          <button type="submit" className="button w-1/2 h-10 bg-[#22cbc0] text-white mb-[1.5rem]">
             Login
           </button>
           
           <Link 
             to="/Regist"
-            className="buttonCr w-2/5 h-8 text-[#0c7b93] mb-[1.5rem] font-extrabold"
+            className="buttonCr w-2/5 h-8 text-[#5e39f0] mb-[1.5rem] font-extrabold"
             onClick={() => onClose(false)}
             // to="/Register"
             >

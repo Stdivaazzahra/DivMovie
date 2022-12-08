@@ -20,8 +20,8 @@ const UpComing = () => {
 
   return (
     <div>
-      <div className='UpComingWrap bg-[#162447]'>
-        <div className='UpTitle pt-[4rem] md:pt-[5rem] pb-[1rem] md:pb-[2rem]'>
+      <div className='UpComingWrap bg-[#081548]'>
+        <div className='UpTitle pt-[4rem] md:pt-[5rem] pb-[1rem] md:pb-[2rem] shadowUp fontCabin'>
             <h1 className='text-[2.2rem] md:text-[2.5rem] text-white font-extrabold'>
               UpComing Movie
             </h1>
@@ -32,11 +32,11 @@ const UpComing = () => {
             return (
               <div 
                   onClick={() => getID(item.id)} key={item.id} 
-                  className='UpMovieItem flex justify-center items-center flex-col cursor-pointer rounded-2xl bg-[#27496d] m-[0.5rem] p-[0.5rem]'>
-                  <img className='UpMovieImg mx-[0.5rem] w-[10rem] flex items-center rounded-xl' 
+                  className='UpMovieItem flex justify-center items-center flex-col cursor-pointer rounded-2xl bg-[#0d1d5f] m-[0.5rem] p-[0.5rem] trnsitionAll borderItems2 hover:shadowCard'>
+                  <img className='UpMovieImg md:h-[15rem] mx-[0.5rem] w-[10rem] flex items-center rounded-xl' 
                     src={ApiImg + `${item.poster_path}`} 
                     alt="PosterMovie" />
-                  <h2 className='UpMovieTitle hidden md:block text-white text-base w-40 py-2 truncate text-[1rem]'>
+                  <h2 className='UpMovieTitle fontCabin hidden md:block text-white text-base w-40 py-2 truncate text-[1rem] font-semibold shadowH2'>
                     {item.title}
                   </h2>
               </div>
