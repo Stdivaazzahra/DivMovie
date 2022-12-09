@@ -62,7 +62,7 @@ const HomePage = () => {
                                 <h2 className='HeaderTitle text-[5rem] pr-[5rem] fontCabin shadowHeader font-extrabold'>
                                     {header.title}
                                 </h2>
-                                <a className='HeaderClick mr-[10rem] p-[0.4rem] shadowButton text-white text-[1rem] w-[30%] md:w-[10%]  cursor-pointer rounded-xl fontCabin font-semibold trnsitionAll borderButton shadowNavbar hover:borderItems bg-[#5e39f0] hover:bg-transparent' 
+                                <a className='HeaderClick mr-[10rem] p-[0.4rem] shadowButton text-white text-[1rem] w-[30%] md:w-[10%]  cursor-pointer rounded-xl fontCabin font-semibold trnsitionAll borderButton shadowNavbar hover:borderItems2 bg-[#5e39f0] hover:bg-transparent' 
                                     href={`${header.homepage}`} target="blank"
                                     >
                                     Click Here
@@ -107,7 +107,7 @@ const HomePage = () => {
                         className='searchItem p-2 w-[15rem] md:w-[20rem] mt-5 rounded-xl flex flex-row items-center justify-center text-white hover:shadowCard trnsitionAll borderItems' 
                     >
                         <input 
-                            className='fontCabin bg-transparent'
+                            className='fontCabin bg-transparent w-full border-none'
                             onChange={(e) => setSeacrh(e.target.value)} 
                             value={seacrh} 
                             type="seacrh" 

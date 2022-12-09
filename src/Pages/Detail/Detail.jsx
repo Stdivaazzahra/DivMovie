@@ -61,7 +61,7 @@ const Detail = () => {
                         {detail?.overview}
                       </p>
                   
-                    <a className='DetailClick mt-0 md:mt-[1rem] w-[30%] md:w-[20%] p-[0.4rem] shadowButton text-white text-[1rem] cursor-pointer rounded-xl fontCabin font-semibold trnsitionAll borderButton shadowNavbar hover:borderItems bg-[#5e39f0] hover:bg-transparent' 
+                    <a className='DetailClick mt-0 md:mt-[1rem] w-[30%] md:w-[20%] p-[0.4rem] shadowButton text-white text-[1rem] cursor-pointer rounded-xl fontCabin font-semibold trnsitionAll borderButton shadowNavbar hover:borderItems2 bg-[#5e39f0] hover:bg-transparent' 
                         href={`${detail?.homepage}`} 
                         target="blank">
                           Click Here
